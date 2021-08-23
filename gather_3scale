@@ -158,8 +158,7 @@ function main() {
   resources=$(addResourcePrefix ns "${apiManagerNamespaces}")
   resources+=$(addResourcePrefix ns "${apiCastNamespaces}")
   resources+=$(addResourcePrefix node "${nodes}")
-  resources+=$(addResourcePrefix ns "openshift-cluster-version")
-  resources+="APIManager APIManagerBackup APIManagerRestore APIcast"
+  resources+="APIManager APIManagerBackup APIManagerRestore APIcast ns/openshift-cluster-version"
   resources=$(unique "${resources}")
 
   for resource in ${resources}; do
